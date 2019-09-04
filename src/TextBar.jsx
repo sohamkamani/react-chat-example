@@ -7,7 +7,7 @@ export default class TextBar extends Component {
     this.input = React.createRef()
   }
   sendMessage () {
-    this.props.onSend(this.input.current.value)
+    this.props.onSend && this.props.onSend(this.input.current.value)
     this.input.current.value = ''
   }
   sendMessageIfEnter (e) {
