@@ -1,4 +1,4 @@
-const host = 'localhost:8080'
+const host = window.location.host + '/chat'
 
 export let send
 

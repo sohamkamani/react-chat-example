@@ -1,10 +1,6 @@
-const WebSocket = require('ws')
-
-const server = new WebSocket.Server({ port: 8080 })
-
 const connections = new Set()
 
-server.on('connection', (ws) => {
+const wsHandler = (ws) => {
   ws.on('message', (message) => {
     connections.forEach((conn) => conn.send(message))
   })
@@ -16,9 +12,17 @@ server.on('connection', (ws) => {
     connections.delete(ws)
     console.log('active connections: ', connections.size)
   })
-})
+}
+
+server.on('connection', wsHandler)
 
 const express = require('express')
+const expressWs = require('express-ws')
+
 const app = express()
+expressWs(app)
+
 app.use(express.static('build'))
-app.listen(8081)
+app.ws('/chat', wsHandler)
+
+app.listen(8080)
