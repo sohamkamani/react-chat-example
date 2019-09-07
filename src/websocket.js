@@ -1,10 +1,9 @@
-const host = window.location.host + '/chat'
-const protocol = window.location.protocol === 'https:' ? 'wss://' : 'ws://'
+const host = process.env.NODE_ENV === 'production' ? window.location.host : 'localhost:8080'
 
 export let send
 
 export const startWebsocketConnection = () => {
-  const ws = new window.WebSocket(protocol + host) || {}
+  const ws = new window.WebSocket('ws://' + host + '/chat') || {}
   ws.onopen = () => {
     console.log('opened ws connection')
   }
