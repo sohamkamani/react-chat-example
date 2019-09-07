@@ -17,3 +17,8 @@ server.on('connection', (ws) => {
     console.log('active connections: ', connections.size)
   })
 })
+
+const express = require('express')
+const app = express()
+app.use(express.static('build'))
+app.listen(8081)
