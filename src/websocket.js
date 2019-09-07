@@ -1,9 +1,10 @@
 const host = window.location.host + '/chat'
+const protocol = window.location.protocol === 'https:' ? 'wss://' : 'ws://'
 
 export let send
 
 export const startWebsocketConnection = () => {
-  const ws = new window.WebSocket('ws://' + host) || {}
+  const ws = new window.WebSocket(protocol + host) || {}
   ws.onopen = () => {
     console.log('opened ws connection')
   }
