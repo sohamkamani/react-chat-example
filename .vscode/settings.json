@@ -7,5 +7,6 @@
                 "latex",
                 "plaintext",
                 "mdx"
-        ]
+        ],
+        "workbench.colorTheme": "Tomorrow Night Blue"
 }

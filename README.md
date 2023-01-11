@@ -1,6 +1,6 @@
 # React Chat Example
 
-An example repository demonstrating how to build a chat application with React and Node.js. See the full tutorial [on my blog](https://codetree.dev/react-websocket-chat-application/)
+An example repository demonstrating how to build a chat application with React and Node.js. See the full tutorial [on my blog](https://www.sohamkamani.com/reactjs/chat-application/)
 
 ## Running the application
 
